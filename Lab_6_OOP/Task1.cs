@@ -11,9 +11,9 @@ namespace Lab_6_OOP
             int sum = 0;
             int count = 0;
 
-            using (StreamReader NF = new StreamReader(no_file.txt, false));
-            using (StreamReader BD = new StreamReader(bad_data.txt, false));
-            using (StreamReader OF = new StreamReader(overflow.txt, false));
+            using StreamWriter NF = new StreamWriter("no_file.txt", false);
+            using StreamWriter BD = new StreamWriter("bad_data.txt", false);
+            using StreamWriter OF = new StreamWriter("overflow.txt", false);
 
             foreach (int i in Enumerable.Range(10,20))
             {
@@ -32,7 +32,7 @@ namespace Lab_6_OOP
                 }
                 catch(FileNotFoundException)
                 {
-                    NF.WriteLine($"Файл {Filename} не знайдено.");
+                    NF.WriteLine(Filename);
                 }
                 catch(Exception ex) when (ex is FormatException || ex is IndexOutOfRangeException)
                 {

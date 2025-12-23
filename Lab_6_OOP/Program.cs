@@ -23,7 +23,7 @@ namespace Lab_6_OOP
                             Task1.Run();
                             break;
                         case "2":
-                            Task2.Run();
+                            //Task2.Run();
                             break;
                         case "0":
                             return;
